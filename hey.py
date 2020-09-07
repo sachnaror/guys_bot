@@ -40,7 +40,7 @@ class MyStreamListener(tweepy.StreamListener):
             print("already seen this tweet: ", status.text)
         else:
             like(tweet_id)
-            time.sleep(5)
+            time.sleep(60)
 
             self.api.update_status(message,in_reply_to_status_id=tweet_id, auto_populate_reply_metadata=True)
             self.api.create_friendship(follow_id)

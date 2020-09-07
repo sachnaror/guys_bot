@@ -32,17 +32,19 @@ class MyStreamListener(tweepy.StreamListener):
 
     def on_status(self, status):
         print("==========================================================")
+        
+        follow_id=(status.user.id)
         message="Hey I liked this tweet of yours. We have an active opening for fullstack Engineers. Please DM me; will provide all details t.ly/4diY,and/or if you can support me by retweeting this or spread the word I will be thankful.Show your support pls."
         tweet_id=status.id
         if tweet_id in self.replied_tweets:
             print("already seen this tweet: ", status.text)
         else:
             like(tweet_id)
-            time.sleep(60)
+            time.sleep(5)
 
             self.api.update_status(message,in_reply_to_status_id=tweet_id, auto_populate_reply_metadata=True)
+            self.api.create_friendship(follow_id)
             
-            print("replied to tweet: {}\n".format(status.text))
             print("==========================================================")
             self.replied_tweets.append(tweet_id)
         

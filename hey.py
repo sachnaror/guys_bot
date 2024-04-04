@@ -2,7 +2,7 @@ import tweepy
 import time
 
 
-# Authenticate to Twitter
+# Authenticate to Twitter 
 
 API_KEY="XxUAkAiKE0FqCfpFBzDZ2"
 API_SECRET="OIMYimUCKPmbCUTNf3mnfAWzRW7jJcVs45FKTxwmF5ZI1"
